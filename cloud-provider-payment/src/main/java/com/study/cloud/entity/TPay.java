@@ -3,7 +3,11 @@ package com.study.cloud.entity;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+
+import javax.persistence.Id;
 
 /**
  * 支付交易表
@@ -14,7 +18,8 @@ public class TPay implements Serializable {
     /**
      * 
      */
-    private Object id;
+    @Id
+    private Integer id;
 
     /**
      * 支付流水号
@@ -44,6 +49,7 @@ public class TPay implements Serializable {
     /**
      * 创建时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
 
     /**

@@ -2,6 +2,7 @@ package com.study.cloud.entity;
 
 import lombok.Data;
 
+import javax.persistence.Id;
 import java.math.BigDecimal;
 
 /**
@@ -14,7 +15,8 @@ public class TPayDTO {
     /**
      *
      */
-    private Object id;
+    @Id
+    private Integer id;
 
     /**
      * 支付流水号

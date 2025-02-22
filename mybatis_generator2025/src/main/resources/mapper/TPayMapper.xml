@@ -28,10 +28,7 @@
         where  id = #{id,jdbcType=OTHER} 
     </select>
 
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-        delete from t_pay
-        where  id = #{id,jdbcType=OTHER} 
-    </delete>
+
     <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.study.cloud.entity.TPay" useGeneratedKeys="true">
         insert into t_pay
         ( id,pay_no,order_no
