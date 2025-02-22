@@ -3,6 +3,7 @@ package com.study.cloud.controller;
 import com.study.cloud.entity.TPay;
 import com.study.cloud.entity.TPayDTO;
 import com.study.cloud.resp.ResultData;
+import com.study.cloud.resp.ReturnCodeEnum;
 import com.study.cloud.service.PayService;
 import jakarta.annotation.Resource;
 import org.springframework.beans.BeanUtils;
@@ -51,6 +52,13 @@ public class PayController {
     @GetMapping(value = "/pay/getall")
     public ResultData<List<TPay>> getAll(){
         return ResultData.success(payService.getAll());
+    }
+
+    @RequestMapping(value = "/pay/error",method = RequestMethod.GET)
+    public ResultData<Integer> getPayError()
+    {
+        int data = 10/0;
+        return ResultData.success(data);
     }
 
 }
